@@ -34,7 +34,7 @@ jobs:
       matrix:
         boards: [rock-4se]
         build_systems: [rbuild]
-        distros: [debian, ubuntu]
+        distros: [debian, ubuntu, focal]
         flavors: [kde, xfce, cli]
         exclude:
           - build_systems: debos
@@ -43,6 +43,10 @@ jobs:
           - build_systems: debos
             distros: ubuntu
             flavors: kde
+          - build_systems: debos
+            distros: focal
+          - build_systems: armbian
+            distros: focal
           - build_systems: armbian
             flavors: xfce
           - build_systems: debos
