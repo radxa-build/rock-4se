@@ -74,10 +74,19 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload rbuild image
         uses: radxa-repo/rbuild@main
-        if: matrix.build_systems == 'rbuild'
+        if: matrix.build_systems == 'rbuild' && matrix.distros != 'focal'
         with:
           board: ${{ matrix.boards }}
           distro: ${{ matrix.distros }}
+          flavor: ${{ matrix.flavors }}
+          release-id: ${{ needs.prepare_release.outputs.release_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload rbuild legacy image
+        uses: radxa-repo/rbuild@main
+        if: matrix.build_systems == 'rbuild' && matrix.distros == 'focal'
+        with:
+          board: ${{ matrix.boards }}
+          suite: ${{ matrix.distros }}
           flavor: ${{ matrix.flavors }}
           release-id: ${{ needs.prepare_release.outputs.release_id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
