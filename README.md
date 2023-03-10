@@ -1,5 +1,5 @@
 # ROCK 4SE
-[![Build](https://github.com/radxa-build/rock-4se/workflows/Build/badge.svg)](https://github.com/radxa-build/rock-4se/actions/workflows/build.yml)
+[![Build](https://github.com/radxa-build/rock-4se/actions/workflows/build.yml/badge.svg)](https://github.com/radxa-build/rock-4se/actions/workflows/build.yml)
 
 ## What is this?
 
